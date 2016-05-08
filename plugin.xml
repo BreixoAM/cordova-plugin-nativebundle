@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:rim="http://www.blackberry.com/ns/widgets"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-plugin-nativebundle"
+    version="0.0.1">
+    <name>Tgw</name>
+    <description>Cordova Plugin NativeBundle</description>
+    <license>MIT</license>
+    <keywords>cordova, native, header, slider</keywords>
+
+    <js-module src="www/tgw.js" name="tgw">
+        <clobbers target="tgw" />
+    </js-module>
+    <js-module src="www/Frame.js" name="tgw.Frame">
+        <clobbers target="tgw.Frame" />
+    </js-module>
+    <js-module src="www/Header.js" name="tgw.Header">
+        <clobbers target="tgw.Header" />
+    </js-module>
+    <js-module src="www/Slider.js" name="tgw.Slider">
+        <clobbers target="tgw.Slider" />
+    </js-module>
+    <js-module src="www/Content.js" name="tgw.Content">
+        <clobbers target="tgw.Content" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Tgw" >
+                <param name="android-package" value="com.breixoam.tgw.Tgw"/>
+            </feature>
+        </config-file>
+
+        <!-- Sources -->
+        <source-file src="src/android/Tgw.java" target-dir="src/com/breixoam/tgw" />
+        <source-file src="src/android/TgwActivity.java" target-dir="src/com/breixoam/tgw" />
+        <source-file src="src/android/Frame.java" target-dir="src/com/breixoam/tgw" />
+        <source-file src="src/android/Header.java" target-dir="src/com/breixoam/tgw" />
+        <source-file src="src/android/Slider.java" target-dir="src/com/breixoam/tgw" />
+        <source-file src="src/android/Content.java" target-dir="src/com/breixoam/tgw" />
+        <source-file src="src/android/OptionSlider.java" target-dir="src/com/breixoam/tgw" />
+        <source-file src="src/android/OptionHeader.java" target-dir="src/com/breixoam/tgw" />
+        <source-file src="src/android/ActionHeader.java" target-dir="src/com/breixoam/tgw" />
+
+        <!-- Resources -->
+        <resource-file src="res/android/drawable/side_nav_bar.xml" target="res/drawable/side_nav_bar.xml" />
+        <resource-file src="res/android/layout/activity_tgw.xml" target="res/layout/activity_tgw.xml" />
+        <resource-file src="res/android/layout/app_bar_tgw.xml" target="res/layout/app_bar_tgw.xml" />
+        <resource-file src="res/android/layout/content_tgw.xml" target="res/layout/content_tgw.xml" />
+        <resource-file src="res/android/layout/nav_header_tgw.xml" target="res/layout/nav_header_tgw.xml" />
+        <resource-file src="res/android/menu/activity_tgw_drawer.xml" target="res/menu/activity_tgw_drawer.xml" />
+        <resource-file src="res/android/values/colors.xml" target="res/values/colors.xml" />
+        <resource-file src="res/android/values/dimens.xml" target="res/values/dimens.xml" />
+        <resource-file src="res/android/values/styles.xml" target="res/values/styles.xml" />
+        <resource-file src="res/android/values-v21/styles.xml" target="res/values-v21/styles.xml" />
+        <resource-file src="res/android/values-w820dp/dimens.xml" target="res/values-w820dp/dimens.xml" />
+        <resource-file src="res/android/drawable/circle.xml" target="res/drawable/circle.xml" />
+
+        <!-- Drawable icons -->
+        <resource-file src="res/android/drawable/build.xml" target="res/drawable/build.xml" />
+        <resource-file src="res/android/drawable/check.xml" target="res/drawable/check.xml" />
+        <resource-file src="res/android/drawable/dashboard.xml" target="res/drawable/dashboard.xml" />
+        <resource-file src="res/android/drawable/info_outline.xml" target="res/drawable/info_outline.xml" />
+        <resource-file src="res/android/drawable/search.xml" target="res/drawable/search.xml" />
+        <resource-file src="res/android/drawable/share.xml" target="res/drawable/share.xml" />
+        <resource-file src="res/android/drawable/view_module.xml" target="res/drawable/view_module.xml" />
+
+        <!-- Dependencies -->
+        <framework src="com.android.support:support-v4:+" />
+        <framework src="com.android.support:appcompat-v7:+" />
+        <framework src="com.android.support:design:+" />
+
+        <!-- Activity -->
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity
+                android:name="com.breixoam.tgw.TgwActivity"
+                android:label="TgwActivity"
+                android:theme="@style/TgwTheme.NoActionBar">
+            </activity>
+        </config-file>
+
+        <!-- Hooks Android -->
+        <hook type="after_prepare" src="hooks/android/addTheme.js" />
+        <hook type="before_plugin_rm" src="hooks/android/clearPlugin.js" />
+
+    </platform>
+
+</plugin>
