@@ -9,8 +9,8 @@ function Tgw() {
 
 Tgw.prototype.init = function(successCallback, options) {
 	var arguments = [
-		options.colorPrimary,
-		options.colorPrimaryDark,
+		options.mainColor,
+		options.mainColorDark,
 		options.title
 	];
 	var callback = function() {
