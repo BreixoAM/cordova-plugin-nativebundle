@@ -256,18 +256,18 @@ Example:
 [
 	{
 		'icon': 'dashboard',
-		'title': 'Tabs',
+		'title': 'Dashboard',
 		'checked': 0,
 		'callback': function(data) {
-			$rootScope.goState('tabs.tab1', true);
+			alert('Dashboard');
 		}
 	},
 	{
 		'icon': 'build',
-		'title': 'Settings',
+		'title': 'Build',
 		'checked': 0,
 		'callback': function(data) {
-			$rootScope.goState('settings', true);
+			alert('Build');
 		}
 	}
 ]
