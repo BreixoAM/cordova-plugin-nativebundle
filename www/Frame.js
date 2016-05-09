@@ -39,11 +39,6 @@ Frame.prototype.setMainColorDark = function(mainColorDark, callback) {
 	exec(callback, function(){}, "Tgw", "frameSetMainColorDark", [mainColorDark]);
 };
 
-Frame.prototype.repaint = function(callback) {
-	if (!callback) callback = function() {};
-	exec(callback, function(){}, "Tgw", "frameRepaint", []);
-};
-
 Frame.prototype.showSpinner = function(callback) {
 	if (!callback) callback = function() {};
 	exec(callback, function(){}, "Tgw", "frameShowSpinner", []);
