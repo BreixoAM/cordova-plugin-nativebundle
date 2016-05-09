@@ -70,9 +70,9 @@ Source code on [github](https://github.com/BreixoAM/nativebundle-example)
 
 - [.setColor(color)](#slidersetcolorcolor)
 - [.getTitle1()](#slidergettitle1)
-- [.setTitle1(title)](#slidersettitle1title)
+- [.setTitle1()](#slidersettitle1title)
 - [.getTitle2()](#slidergettitle2)
-- [.setTitle2(title)](#slidersettitle2title)
+- [.setTitle2()](#slidersettitle2title)
 - [.setIcon()](#sliderseticoncharcolor1color2)
 - [.setOptions()](#slidersetoptionsoptions)
 
