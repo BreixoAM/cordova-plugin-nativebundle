@@ -1,18 +1,18 @@
 # cordova-plugin-nativebundle
-This plugin provides a native header and slider menu, and allows you to controll them from JavaScript (appearance and behavior).
+This plugin provides a native header and slider menu, and allows you to controll them from Javascript (appearance and behavior).
 
 ## Supported Platforms
-* Android
+* Android 4.1 or higher.
 
 ## Installation
 
-# New project:
+**New project:**
 ```
 cordova platform add https://github.com/BreixoAM/cordova-android-compat
 cordova plugin add https://github.com/BreixoAM/cordova-plugin-nativebundle
 ```
 
-# Existing project:
+**Existing project:**
 ```
 cordova platform update https://github.com/BreixoAM/cordova-android-compat
 cordova plugin add https://github.com/BreixoAM/cordova-plugin-nativebundle
@@ -34,7 +34,7 @@ cordova plugin add https://github.com/BreixoAM/cordova-plugin-nativebundle
 #API
 
 ## Tgw
-- [.init()](#tgw-init)
+- [.init()](#tgw-tgwinitcallbackoptions)
 
 ## Frame
 
@@ -65,7 +65,64 @@ cordova plugin add https://github.com/BreixoAM/cordova-plugin-nativebundle
 - [.setColor()](#header-setColor)
 - [.getTitle1()](#frame-getTitle1)
 - [.setTitle1()](#frame-setTitle1)
+- [.getTitle2()](#frame-getTitle2)
 - [.setTitle2()](#frame-setTitle2)
 - [.setIcon()](#frame-setIcon)
 - [.setOptions()](#frame-setOptions)
+
+## tgw.init(callBack, options)
+
+Initializes the plugin on the native side.
+**callBack:** will be called with frame object to manipulate the native elements.
+**options:** init object:
+	- options.mainColor: Header color.
+	- options.mainColorDark: Status bar color.
+	- options.title: Header title.
+
+## frame.header
+
+Header object.
+
+## frame.slider
+
+Slider object.
+
+## frame.content
+
+Content object
+
+## frame.getMainColor()
+
+Get header color.
+
+## frame.setMainColor()
+
+Update header color.
+
+## frame.getMainColorDark()
+
+Get statusbar color.
+
+## frame.setMainColorDark()
+
+Update statusbar color.
+
+## frame.showSpinner()
+
+Show native dialog spinner.
+
+## frame.hideSpinner()
+
+Hide native dialog spinner.
+
+
+
+
+
+
+
+
+
+
+
 
