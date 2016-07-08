@@ -47,4 +47,9 @@ Content.prototype.hide = function(callback) {
 	exec(callback, function(){}, "Tgw", "contentHide", []);
 };
 
+Content.prototype.clearHistory = function(callback) {
+	if (!callback) callback = function() {};
+	exec(callback, function(){}, "Tgw", "contentClearHistory", []);
+};
+
 module.exports = Content;

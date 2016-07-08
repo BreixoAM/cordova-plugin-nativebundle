@@ -286,6 +286,11 @@ public class Tgw extends CordovaPlugin {
             this.frame.content.show();
             callbackContext.success();
 
+        } else if ("clearHistory".equals(parseAction)) {
+
+            this.frame.content.clearHistory();
+            callbackContext.success();
+
         } else {
             return false;
         }

@@ -36,6 +36,7 @@ public class TgwActivity extends CordovaActivity
     protected ActionBarDrawerToggle toggle;
     protected View browser;
     protected ProgressDialog progress;
+    protected CordovaWebView webView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -114,6 +115,7 @@ public class TgwActivity extends CordovaActivity
         final ActionBarDrawerToggle finalToggle = toggle;
         final DrawerLayout finalDrawer = drawer;
         final CordovaWebView finalBrowser = this.appView;
+        webView = this.appView;
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

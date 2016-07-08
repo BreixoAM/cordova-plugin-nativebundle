@@ -1,6 +1,7 @@
 package com.breixoam.tgw;
 
 import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaWebView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.webkit.WebView;
@@ -174,6 +175,22 @@ public class Content {
                     });
             }
         });
+    }
+
+    public void clearHistory() {
+        
+        final AppCompatActivity activity = Tgw.activity;
+        
+        activity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+
+                CordovaWebView finalBrowser = ((TgwActivity) Tgw.activity).webView;
+                finalBrowser.clearHistory();
+            }
+        });
+        
+
     }
 
 }
