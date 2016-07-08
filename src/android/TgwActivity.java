@@ -67,34 +67,6 @@ public class TgwActivity extends CordovaActivity
         Toolbar toolbar = (Toolbar) findViewById(resources.getIdentifier("toolbar", "id", package_name));
         this.toolBar = toolbar;
 
-        //Init ui with values conf
-        if (Tgw.frame != null) {
-
-            //Set title
-            toolbar.setTitle(Tgw.frame.header.getTitle());
-
-            //Update color toolbar
-            toolbar.setBackgroundColor(Color.parseColor(Tgw.frame.getMainColor()));
-
-            int currentapiVersion = android.os.Build.VERSION.SDK_INT;
-            if (currentapiVersion >= android.os.Build.VERSION_CODES.LOLLIPOP){
-                
-                //Update color statusbar
-                final Window window = this.getWindow();
-                window.setStatusBarColor(Color.parseColor(Tgw.frame.getMainColorDark()));
-                //Update color activitydesc
-                ActivityManager activityManager = (ActivityManager) this.getSystemService(Context.ACTIVITY_SERVICE);
-                for (ActivityManager.AppTask appTask : activityManager.getAppTasks()) {
-                    if (appTask.getTaskInfo().id == this.getTaskId()) {
-                        ActivityManager.TaskDescription description = appTask.getTaskInfo().taskDescription;
-                        ActivityManager.TaskDescription a = new ActivityManager.TaskDescription(description.getLabel(), description.getIcon(), Color.parseColor(Tgw.frame.getMainColor()));
-                        this.setTaskDescription(a);
-                    }
-                }
-            }
-
-        }
-
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(resources.getIdentifier("drawer_layout", "id", package_name));

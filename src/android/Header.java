@@ -32,8 +32,7 @@ public class Header {
     /**
      * Constructor 
      */
-    public Header(String title) {
-    	this.title = title;
+    public Header() {
         this.options = new ArrayList<OptionHeader>();
         this.actions = new ArrayList<ActionHeader>();
     }

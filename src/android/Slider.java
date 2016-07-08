@@ -167,7 +167,7 @@ public class Slider {
                     final OptionSlider option = ((OptionSlider) options.get(i));
 
                     MenuItem menuItem = menuNav.add(1, 2, i, option.title);
-                    menuItem.setCheckable(true);
+                    menuItem.setCheckable(false);
 
                     if (option.checked.equals("1")) {
                         menuItem.setChecked(true);

@@ -18,6 +18,12 @@ module.exports = function(context) {
             var reg = /(android:theme=\".*?\")/;
             var result = data.replace(reg, "android:theme=\"@style/AppTheme.NoActionBar\"");
 
+
+            var init = result.search("<activity");
+            var end = result.search("</activity>")+11;
+
+            result = result.replace(result.substring(init, end), "");
+
             fs.writeFile(manifestFile, result, 'utf8', function (err) {
                 if (err) throw new Error('Unable to write into AndroidManifest.xml: ' + err);
             });

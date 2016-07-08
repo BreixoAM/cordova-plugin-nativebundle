@@ -21,10 +21,8 @@ public class Frame {
     /**
      * Constructor 
      */
-    public Frame(String mainColor, String mainColorDark, String title) {
-    	this.mainColor = mainColor;
-    	this.mainColorDark = mainColorDark;
-        this.header = new Header(title);
+    public Frame() {
+        this.header = new Header();
         this.slider = new Slider();
         this.content = new Content();
     }

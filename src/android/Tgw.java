@@ -47,19 +47,8 @@ public class Tgw extends CordovaPlugin {
 
         if ("init".equals(action)) {
 
-            //Check if the cordova activity is the de TgwActivity
-            if ("TgwActivity".equals(cordova.getActivity().getClass().getSimpleName())) {
-                callbackContext.success();
-                return true;
-            }
-
-            this.frame = new Frame(args.getString(0), args.getString(1), args.getString(2));
-
-            //Replace main activiy with tgw activity
-            Intent i = new Intent(cordova.getActivity(), TgwActivity.class);
-            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            cordova.getActivity().startActivity(i);
-            cordova.getActivity().overridePendingTransition(0, 0);
+            this.frame = new Frame();
+            callbackContext.success();
             return true;
 
         } else if (action.startsWith("frame")) {
